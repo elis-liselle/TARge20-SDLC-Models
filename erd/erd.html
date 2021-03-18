@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        td, th{
+            border: 1px solid black;
+            padding: 1rem;
+        }
+
+        th{
+            color: #fff;
+            background-color:darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>IKEA Database</h2>
+
+    <div class="panel">
+        <p><a href="https://github.com/elis-liselle/BitcoinCalculatorApp">My Windows Form App</a></p>
+    </div>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open ERD</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>IKEA Database</h3>
+            <img src="../img/ERD_IKEA.png" alt="ERD">
+
+            <h3>ERD description</h3>
+            <h4>Table Room</h4>
+            <ul>
+                <li>Descriptions of what the table means and how it's functionally used (in the UI, etc.): there can be lots of rooms in one serie.</li>
+                <li>Descriptions of what each attribute means: Id is an unique value and a primary key (int) and RoomName include names of rooms (varchar(55) means that RoomName can hold until 55 letter and/or numbers)</li>
+                <li>Explanations of the relationships (foreign keys) from this table to others, and vice-versa: RoomId is the primary key in the Room table (unique value) and it's a foreign key in the Series table. So it's quite easy to get to know which Room is connected to the Serie (e.g when the RoomId is 1, we know that it equals to "Kitchen" etc.</li>
+            </ul>
+
+            <h4>Table Series</h4>
+            <ul>
+                <li>Descriptions of what the table means and how it's functionally used (in the UI, etc.): there can be lots of rooms in one serie.</li>
+                <li>Descriptions of what each attribute means: Id is an unique value and a primary key (int), SeriesName include names of rooms (varchar(55) means that SeriesName can hold until 55 letter and/or numbers) and RoomId is a foreign key from Room Table.</li>
+                <li>Explanations of the relationships (foreign keys) from this table to others, and vice-versa: SeriesId is a primary key in the Series table (unique value, in other words: each SerieName equals to one unique SerieId); RoomId is a foreign key from the Room table.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h4>Room</h4>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>RoomName</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Kitchen</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bedroom</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Living Room</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Children's Room</td>
+            </tr>
+        </table>
+
+    <h4>Series</h4>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>RoomId</th>
+                <th>SeriesName</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>4</td>
+                <td>MAMMUT</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>4</td>
+                <td>STUVA</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>2</td>
+                <td>MALM</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>1</td>
+                <td>METOD</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>2</td>
+                <td>HEMNES</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>3</td>
+                <td>KIVIK</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>3</td>
+                <td>EKTORP</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>4</td>
+                <td>SUNDVIK</td>
+            </tr>
+            
+        </table>
+
+        <footer style="text-align: center; margin-top: 5rem;">
+            Copyright 2021 &#169 E.L.S.
+        </footer>
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
