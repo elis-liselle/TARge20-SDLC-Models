@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        code{
+            background-color: black;
+            color:#fff;
+            font-size: 1.5rem;
+        }
+    </style>
+    <title>Git and GitHub</title>
+</head>
+<body>
+    <div>
+        <h1>Git</h1>
+        <p>
+            <li>Version Control System.</li>
+            <li>Manage Source Coode History.</li> 
+            <li>Local Tool.</li>
+            <hr>
+            <li><b>Repository: </b>location where your code history is stored.</li>
+            <li><b>Branch: </b>"Folder" within the repository containg commits.</li>
+            <li><b>Commits: </b>different stages of your code inside a branch.</li>
+        </p>
+
+        <h2>Commands</h2>
+        <code>$git init</code>
+        <p>Initializes a local Git repository/ creates a repository.</p>
+
+        <code>$git status</code>
+        <p>To see the status of the Git repository if we have any untracked changes.</p>
+
+        <code>$git add .</code>
+        <p>To add all files/ changes.</p>
+
+        <code>$git commit -m "..."</code>
+        <p>Commit a code.</p>
+
+        <code>$git branch</code>
+        <p>To see branches that are available.</p>
+
+        <code>$git checkout -b ...</code>
+        <p>Create new branch and after -b should be written a branch name.</p>
+
+        <code>$git log</code>
+        <p>Allows to get overview of all the commits that we have in the branch that we are currently located in.</p>
+
+        <code>$git checkout ...</code>
+        <p>You can use it to do both, check out branches or in that case, commits. And when doing git log, you will get the ID of a specific commmit and then get checkout plus ID to check out this commit.</p>
+
+        <code>git checkout -- .</code>
+        <p>Helps to go back to the last commit we did and to get rid of all unstaged changes.</p>
+
+        <code>$git master</code>
+        <p>Change branch name for master branch.</p>
+
+        <code>$git reset --hard ...</code>
+        <p>Resets the index and working tree. Any changes to tracked files in the working tree since commit are discarded. Instead of ... should be the ID of the community we want to go back.</p>
+
+        <code>$git merge ...</code>
+        <p>To merge some branch and after merge should be written branch name.</p>
+
+        <code>$git branch -D ...</code>
+        <p>To delete a branch and after -D should be written branch name as well.</p>
+    </div>
+    <hr>
+
+    <div>
+        <h1>GitHub</h1>
+        <p>
+            <li>Hosting and Collaboration Provider.</li>
+            <li>Git Repositry Hosting.</li>
+            <li>Web Based.</li>
+        </p>
+
+        <h2>Commands</h2>
+        <code>$git remote add origin ...</code>
+        <p>To establish a connection between the local repository and a remote repository on GitHub. Origin is the name for the remote repository. We want to make sure that we establish the connection between a specific remote repository. And here you have to add a link that was created on GitHub when you made a new repository.</p>
+   
+        <code>$git remote</code>
+        <p>List the remote connections you have to other repositories.</p>
+
+        <code>$git remote -v</code>
+        <p> List the current remotes associated with the local repository./ To see the origin more specifically, url behind that.</p>
+   
+        <code>$git push -u origin master</code>
+        <p>To push your branches to the remote repository; -u means that it basically establishes an upstream between Git and GitHub.</p>
+        
+        <code>$git branch</code>
+        <p>To see in which branch we are currently.</p>
+       
+        <code>$git clone ...</code>
+        <p>To clone/ copy someone's repository to our computer. Here should be added the link too. /Clone (download) a repository that already exists on GitHub, including all of the files, branches, and commits.
+        </p>
+
+        <code>$git status</code>
+        <p>Always a good idea, this command shows you what branch you're on, what files are in the working or staging directory, and any other important information.</p>
+        
+        <code>$git push</code>
+        <p>To push the files when it's already connected to the repository. Uploads all local branch commits to the remote.</p>
+
+        <code>$git fetch</code>
+        <p>To synchronize the code in GitHub repository and to remote tracking branch.</p>
+
+        <code>$git merge origin/master</code>
+        <p>To merge the local repository with the remote tracking branch.</p>
+        
+        <code>$git pull</code>
+        <p>Updates your current local working branch with all new commits from the corresponding remote branch on GitHub. git pull is a combination of git fetch and git merge.</p>
+
+        <code>$git remote rm origin</code>
+        <p>Remove the connection to the remote repository.</p>
+    </div>
+</body>
+</html>
